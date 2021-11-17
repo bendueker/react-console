@@ -12,4 +12,3 @@ class SubComponent extends React.Component {
     }
 }
 
-customElements.define('SubComponent', SubComponent);

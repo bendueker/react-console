@@ -83,4 +83,4 @@ class StudioDetails extends React.Component {
   }
 }
 
-customElements.define("StudioDetails", StudioDetails);
+

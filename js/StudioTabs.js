@@ -32,4 +32,4 @@ class StudioTabs extends React.Component {
   }
 }
 
-customElements.define("StudioTabs", StudioTabs);
+

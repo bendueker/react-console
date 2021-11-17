@@ -78,4 +78,4 @@ class StudioSpeakers extends React.Component {
   }
 }
 
-customElements.define("StudioSpeakers", StudioSpeakers);
+

@@ -20,7 +20,7 @@ const menu = (
           <a href="/">Video Only</a>
         </Menu.Item>
         <Menu.Item key={2}>
-          <a href="slides">Video and Slides</a>
+          <a href="#slides">Video and Slides</a>
         </Menu.Item>
       </SubMenu>
     </Menu.ItemGroup>
@@ -44,7 +44,7 @@ const menureports = (
   <Menu>
     <Menu.ItemGroup title="Reports">
       <Menu.Item>
-        <a href="/reports">Registration</a>
+        <a href="#reports">Registration</a>
       </Menu.Item>
       <Menu.Item>Activity</Menu.Item>
     </Menu.ItemGroup>
@@ -130,4 +130,4 @@ class StudioHeader extends React.Component {
   }
 }
 
-customElements.define("StudioHeader", StudioHeader);
+

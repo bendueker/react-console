@@ -64,4 +64,4 @@ class StudioHandouts extends React.Component {
   }
 }
 
-customElements.define("StudioHandouts", StudioHandouts);
+

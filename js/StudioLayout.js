@@ -31,6 +31,9 @@ class StudioLayout extends React.Component {
                   width: "100%",
                   height: "auto",
                 }}
+                src={
+                  "https://qa.onlinexperiences.com/customvts/Prototypes/Lighthouse/lighthouse-rp-v4/Noteworthey.mp4"
+                }
               ></StudioVideo>
               <StudioDetails></StudioDetails>
             </Col>
@@ -46,4 +49,4 @@ class StudioLayout extends React.Component {
   }
 }
 
-customElements.define("StudioLayout", StudioLayout);
+/*  customElements.define("StudioLayout", StudioLayout);  */
