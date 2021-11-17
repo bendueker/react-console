@@ -26,15 +26,15 @@ class StudioLayoutSlides extends React.Component {
         >
           <Row>
             <Col xs={24} xl={16}>
-              <StudioVideo
+              <StudioIFrame
                 style={{
                   width: "100%",
                   height: "auto",
                 }}
                 src={
-                  "http://placehold.jp/5757f0/ffffff/1600x900.png?text=SLIDES"
+                  "slideframe.htm"
                 }
-              ></StudioVideo>
+              ></StudioIFrame>
               <StudioDetails></StudioDetails>
             </Col>
 

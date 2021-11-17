@@ -17,7 +17,7 @@ const menu = (
       <Menu.Item>Video</Menu.Item>
       <SubMenu title="Layouts">
         <Menu.Item key={1}>
-          <a href="/">Video Only</a>
+          <a href="#">Video Only</a>
         </Menu.Item>
         <Menu.Item key={2}>
           <a href="#slides">Video and Slides</a>
