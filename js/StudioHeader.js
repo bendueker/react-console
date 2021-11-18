@@ -1,6 +1,6 @@
 "use strict";
 const { Layout, Row, Col, Menu, Dropdown, Avatar, Image } = antd;
-const { EyeOutlined, UserOutlined, SettingFilled, AreaChartOutlined } = icons;
+const { UserOutlined, SettingFilled, AreaChartOutlined } = icons;
 const { SubMenu } = Menu;
 
 const onChange = (e) => {
@@ -64,8 +64,7 @@ class StudioHeader extends React.Component {
             marginRight: "auto ",
           }}
         >
-          {" "}
-          <a href="./">
+          <a href="#">
             <Image
               style={{
                 margin: "12px",

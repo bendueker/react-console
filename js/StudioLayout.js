@@ -49,4 +49,3 @@ class StudioLayout extends React.Component {
   }
 }
 
-/*  customElements.define("StudioLayout", StudioLayout);  */
