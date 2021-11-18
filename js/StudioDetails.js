@@ -1,8 +1,9 @@
 "use strict";
-const { Tabs } = antd;
+const { Tabs, Drawer } = antd;
 const { useState, useEffect } = React;
 const { EyeOutlined, UserOutlined,FilePdfOutlined } = icons;
 const { TabPane } = Tabs;
+
 
 class StudioDetails extends React.Component {
   constructor(props) {
