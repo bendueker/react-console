@@ -1,6 +1,6 @@
 "use strict";
 const { useState, useEffect } = React;
-const { List, Avatar } = antd;
+const { List, Avatar, Space } = antd;
 const { FilePdfOutlined } = icons;
 
 class StudioHandouts extends React.Component {
@@ -13,20 +13,30 @@ class StudioHandouts extends React.Component {
       console.log("Change:", e.target.value);
     };
 
-    const data = [
-      {
-        title: "Ant Design Title 1",
-      },
-      {
-        title: "Ant Design Title 2",
-      },
-      {
-        title: "Ant Design Title 3",
-      },
-      {
-        title: "Ant Design Title 4",
-      },
-    ];
+
+    /*
+AttachmentKey: 125961
+Description: "Technical Solutions Team Technical Solutions Team"
+FileName: "HomeBanner_1280.jpg"
+FileSize: "27 KB"
+FileTypeImage: "/cfr/Images/FileTypes/Lib4/150x150/FileType_IMAGE.png"
+MAP: "M125961"
+SortOrder: 0
+Title: "Technical Solutions Team "
+Type: 1
+VAR: "g_oHandouts"
+    
+    */
+
+    //
+    const data = oData.ResultSet[8];
+
+    const ListTextBlock = ({ description, filesize }) => (
+      <Space direction="vertical">
+        {description}
+        {filesize}
+      </Space>
+    );
 
     return (
       <div>
@@ -53,8 +63,10 @@ class StudioHandouts extends React.Component {
                     }}
                   />
                 }
-                title={<a href="https://ant.design">{item.title}</a>}
-                description="Ant Design, a design language for background applications, is refined by Ant UED Team"
+                title={<a href={item.AttachmentKey}>{item.Title}</a>}
+                description={
+                  <ListTextBlock description={item.Description} filesize={item.FileSize}></ListTextBlock>
+                }
               />
             </List.Item>
           )}
@@ -63,5 +75,3 @@ class StudioHandouts extends React.Component {
     );
   }
 }
-
-

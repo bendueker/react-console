@@ -11,7 +11,7 @@ class StudioIFrame extends React.Component {
   render() {
 
     return (
-      <iframe width={"100%"} height={"500px"} frameborder={0}  src={this.props.src}></iframe>
+      <iframe width={"100%"} height={"500px"} frameBorder={0}  src={this.props.src}></iframe>
     );
   }
 }

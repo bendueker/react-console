@@ -2,6 +2,8 @@
 
 const {Route, Link, HashRouter } = ReactRouterDOM;
 
+
+
 class MainReact extends React.Component {
   constructor(props) {
     super(props);

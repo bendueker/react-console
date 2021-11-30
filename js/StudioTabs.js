@@ -9,7 +9,13 @@ class StudioTabs extends React.Component {
     super(props);
   }
 
+
+
   render() {
+    function LoadChat(params) {
+      LoadGroupChat();
+    }
+
     return (
       <Tabs
         style={{
@@ -19,7 +25,7 @@ class StudioTabs extends React.Component {
         }}
       >
         <TabPane tab="Chat" key="1">
-          TODO: Put old chat here
+          <div id={"ChatIframeContainer"}></div>
         </TabPane>
         <TabPane tab="Transcription" key="2">
           Content of Tab Pane 2
@@ -27,7 +33,9 @@ class StudioTabs extends React.Component {
         <TabPane tab="Questions" key="3">
           Content of Tab Pane 3
         </TabPane>
+        {LoadChat()}
       </Tabs>
+
     );
   }
 }

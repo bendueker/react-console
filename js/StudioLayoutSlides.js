@@ -5,9 +5,12 @@ const { Header, Footer, Content } = Layout;
 class StudioLayoutSlides extends React.Component {
   constructor(props) {
     super(props);
+    
   }
 
   render() {
+    const data = oData.ResultSet[23][0];
+
     return (
       <Layout>
         <Header
@@ -31,9 +34,7 @@ class StudioLayoutSlides extends React.Component {
                   width: "100%",
                   height: "auto",
                 }}
-                src={
-                  "slideframe.htm"
-                }
+                src={'slideframe.htm'}
               ></StudioIFrame>
               <StudioDetails></StudioDetails>
             </Col>
