@@ -161,19 +161,6 @@ var oData = {
       },
       {
         "VAR": "g_oModerators",
-        "MAP": "M108711",
-        "EventStaffKey": 108711,
-        "Name": "Tom Brady",
-        "Email": "TOM@BUCS.COM",
-        "UserKey": 1562662,
-        "UserType": 0,
-        "ImageURL": "https://qa.onlinexperiences.com/FileLibrary/522/6/tombrady.png",
-        "ModeratorRights": 33292287,
-        "SpeakerID": "6B9C4FFE-8226-4F6A-8765-36A65E2DE6FF",
-        "ChatUserID": 1884819
-      },
-      {
-        "VAR": "g_oModerators",
         "MAP": "M108712",
         "EventStaffKey": 108712,
         "Name": "Patrick Mahomes",
@@ -2680,17 +2667,6 @@ var oData = {
         "Bio": "",
         "JobTitle": "Technical Lead",
         "CompanyName": "Intrado",
-        "OBJE": 0
-      },
-      {
-        "ARRAY": "g_aStafferList",
-        "OBJS": 0,
-        "DisplayOrder": 4,
-        "Name": "Tom Brady",
-        "EmoticonImage": "https://qa.onlinexperiences.com/FileLibrary/522/6/tombrady.png",
-        "Bio": "Brady holds nearly every major quarterback record, including career touchdown passes (661), regular season touchdowns (581), and combined passing yards (91,452), in addition to the most Pro Bowl selections (14, tied with Peyton Manning) and the second-most regular season passing yards (79,204). Never having a losing season, he is the NFL leader in career quarterback wins (263), quarterback regular season wins (230), quarterback playoff wins (33), and Super Bowl MVP awards (4). His career has also been noted for longevity, with his 21 seasons being the most for an NFL quarterback. He is the oldest player to be named Super Bowl MVP (age 39 in Super Bowl LI), be named NFL MVP (age 40 in 2017),[13] and win a Super Bowl as the starting quarterback (age 41 in Super Bowl LIII). Brady is the only NFL quarterback named to two first-team all-decade teams (2000s and 2010s)[14] and was named to the 100th Anniversary All-Time Team in 2019.",
-        "JobTitle": "Quarterback",
-        "CompanyName": "Tampa Bay",
         "OBJE": 0
       },
       {

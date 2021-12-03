@@ -5,7 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=">
   <title>react test</title>
-<link rel="stylesheet" href="https://unpkg.com/antd@4.17.0-alpha.9/dist/antd.css" crossorigin="anonymous" />
+  <link rel="stylesheet" type="text/less" href="https://unpkg.com/antd@4.17.0-alpha.9/dist/antd.less"
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://unpkg.com/antd@4.17.0-alpha.9/dist/antd.css" crossorigin="anonymous" />
 
   <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
@@ -22,29 +24,27 @@
   <script type="text/javascript"
     src="https://presentationsqa.akamaized.net/cfr/scripts/LanguageStrings1033.js"></script>
 
-<script>
+  <script>
 
-  function clickHandler(){
-    //window.less.modifyVars();
-    less.modifyVars({'color': 'red'}
-    )
-  }
+    function clickHandler()
+    {
+      //window.less.modifyVars();
+      less.modifyVars({
+        "theme": {
+          "primaryColor": "#1DA57A",
+        }
+      }
+      )
+    }
   </script>
 
 
-<script>
-  window.less = {
-    env: "development",
-     async: true
-  };
-</script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.0/less.min.js"></script>
 
 </head>
 
 <body>
-<!--   <button onclick="clickHandler()">click me</button> -->
+  <!--   <button onclick="clickHandler()">click me</button> -->
   <div id="root-react">React is loading...</div>
 
   <script type="text/babel" src="./js/StudioLayout.js"></script>
@@ -58,6 +58,7 @@
   <script type="text/babel" src="./js/StudioSpeakers.js"></script>
   <script type="text/babel" src="./js/StudioHandouts.js"></script>
   <script type="text/babel" src="./js/StudioProfileForm.js"></script>
+  <script type="text/babel" src="./js/StudioTheme.js"></script>
   <script type="text/babel" src="./js/app.js"></script>
   <script type="text/javascript" src="FakeData.js"></script>
 
@@ -67,6 +68,17 @@
 
 
 
+  <script>
+    window.less = {
+      async: true,
+      env: 'production'
+    };
+  </script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js"></script>
+  <noscript>
+    You need to enable JavaScript to run this app.
+  </noscript>
+  <button onclick="clickHandler()">Click here</button>
 </body>
 
 </html>

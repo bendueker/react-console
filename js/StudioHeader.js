@@ -151,7 +151,7 @@ class StudioHeader extends React.Component {
           onClose={this.onClose}
           visible={this.state.visible}
         >
-        <StudioProfileForm></StudioProfileForm>
+        <StudioTheme></StudioTheme>
         </Drawer>
       </Row>
     );
