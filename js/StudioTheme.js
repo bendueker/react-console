@@ -87,8 +87,8 @@ class StudioTheme extends React.Component {
           }}
         />
 
-        <span style={{ color: "var(ant-text-color)" }}>
-          var(`--text-color`)
+        <span style={{ color: "var(--ant-text-color)" }}>
+          var(`--ant-text-color`)
         </span>
       </div>
     );

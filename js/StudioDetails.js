@@ -111,13 +111,16 @@ class StudioDetails extends React.Component {
 
     return (
       <div>
-        <h2
-          style={{
-            margin: "24px 12px 0 12px",
-          }}
-        >
-          {data.EventDescription}
-        </h2>
+        <div>
+          <h2
+            style={{
+              margin: "24px 12px 0 12px",
+            }}
+          >
+            {data.EventDescription}
+          </h2>
+          
+        </div>
         <div
           style={{
             margin: "12px",
