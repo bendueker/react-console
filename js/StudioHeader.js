@@ -105,9 +105,10 @@ class StudioHeader extends React.Component {
             >
               <AreaChartOutlined
                 style={{
-                  fontSize: "200%",
+                  fontSize: "155%",
                   verticalAlign: "middle",
                   margin: "0 10px",
+                  color:"#fff"
                 }}
               />
             </a>
@@ -120,9 +121,10 @@ class StudioHeader extends React.Component {
             >
               <SettingFilled
                 style={{
-                  fontSize: "200%",
+                  fontSize: "155%",
                   verticalAlign: "middle",
                   margin: "0 10px",
+                  color:"#fff"
                 }}
               />
             </a>
@@ -135,9 +137,10 @@ class StudioHeader extends React.Component {
             >
               <UserOutlined
                 style={{
-                  fontSize: "200%",
+                  fontSize: "155%",
                   verticalAlign: "middle",
                   margin: "0 10px",
+                  color:"#fff"
                 }}
                 onClick={this.showDrawer}
               />

@@ -12,7 +12,7 @@ class StudioLayout extends React.Component {
       <Layout>
         <Header
           style={{
-            background: "#fff",
+            background: "#000",
             padding: "2px",
           }}
         >

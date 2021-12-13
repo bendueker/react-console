@@ -1,7 +1,7 @@
 "use strict";
-const { Tabs, Drawer } = antd;
+const { Row, Col } = antd;
 const { useState, useEffect } = React;
-const { EyeOutlined, UserOutlined,FilePdfOutlined } = icons;
+const { EyeOutlined, UserOutlined, FilePdfOutlined } = icons;
 const { TabPane } = Tabs;
 /* 
 AttachmentMaxSize: "::{AttachmentMaxSize}"
@@ -105,55 +105,64 @@ class StudioDetails extends React.Component {
   }
 
   render() {
-
     const data = oData.ResultSet[23][0];
 
-
     return (
-      <div>
-        <div>
-          <h2
-            style={{
-              margin: "24px 12px 0 12px",
-            }}
-          >
-            {data.EventDescription}
-          </h2>
-          
-        </div>
-        <div
-          style={{
-            margin: "12px",
-            display: "inline-block",
-          }}
-        >
-          <span
-            style={{
-              margin: "0 12px",
-            }}
-          >
-            <EyeOutlined /> 405
-          </span>
-          <span
-            style={{
-              margin: "0 12px",
-            }}
-          >
-            <UserOutlined /> 23
-          </span>
-        </div>
+      <React.Fragment>
+        <Row>
+          <Col xs={16} xl={16}>
+            <h2
+              style={{
+                margin: "24px 12px 0 12px",
+              }}
+            >
+              {data.EventDescription}
+            </h2>
+
+            <div
+              style={{
+                margin: "12px",
+                display: "inline-block",
+              }}
+            >
+              <span
+                style={{
+                  margin: "0 12px",
+                }}
+              >
+                <EyeOutlined /> 405
+              </span>
+              <span
+                style={{
+                  margin: "0 12px",
+                }}
+              >
+                <UserOutlined /> 23
+              </span>
+            </div>
+          </Col>
+          <Col xs={8} xl={8}>
+            <div
+              style=
+              {{
+                margin: "24px 12px 0 12px",
+                textAlign: "right",
+              }}>
+              <StudioReactions></StudioReactions>
+            </div>
+          </Col>
+        </Row>
+
         <div
           style={{
             margin: "24px 12px 0 12px",
           }}
-        >
-         <div dangerouslySetInnerHTML={{ __html: data.EventAbstract }} /> 
-        </div>
+          dangerouslySetInnerHTML={{ __html: data.EventAbstract }}
+        />
+
         <StudioSpeakers></StudioSpeakers>
         <StudioHandouts></StudioHandouts>
-      </div>
+      </React.Fragment>
     );
   }
 }
-
-
