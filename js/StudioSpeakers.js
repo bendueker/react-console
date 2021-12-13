@@ -3,7 +3,6 @@ const { Tabs } = antd;
 const { useState, useEffect } = React;
 const { List, Avatar } = antd;
 
-
 class StudioSpeakers extends React.Component {
   constructor(props) {
     super(props);
@@ -14,9 +13,7 @@ class StudioSpeakers extends React.Component {
       console.log("Change:", e.target.value);
     };
 
-
-
-/*     const data = [
+    /*     const data = [
       {
         title: "Ben Chodor",
         avatar:
@@ -50,49 +47,47 @@ OBJS: 0
 test
     ]; */
 
-const data = oData.ResultSet[25];
+    const data = oData.ResultSet[25];
 
     return (
       <div>
-      <h2
-        style={{
-          margin: "24px 12px 0 12px",
-        }}
-      >
-        Speakers
-      </h2>
-      <List
-        style={{
-          margin: "24px 12px 0 12px",
-        }}
-        itemLayout="horizontal"
-        dataSource={data}
-        renderItem={(item) => (
-          <List.Item>
-            <List.Item.Meta
-              avatar={
-                <Avatar
-                  src={item.EmoticonImage}
-                  size={{
-                    xs: 40,
-                    sm: 40,
-                    md: 40,
-                    lg: 64,
-                    xl: 80,
-                    xxl: 100,
-                  }}
-                  alt={item.Name}
-                />
-              }
-              title={item.Name}
-              description={item.JobTitle}
-            />
-          </List.Item>
-        )}
-      ></List>
-    </div>
+        <h2
+          style={{
+            margin: "24px 12px 0 12px",
+          }}
+        >
+          Speakers
+        </h2>
+        <List
+          style={{
+            margin: "24px 12px 0 12px",
+          }}
+          itemLayout="horizontal"
+          dataSource={data}
+          renderItem={(item) => (
+            <List.Item>
+              <List.Item.Meta
+                avatar={
+                  <Avatar
+                    src={item.EmoticonImage}
+                    size={{
+                      xs: 40,
+                      sm: 40,
+                      md: 40,
+                      lg: 64,
+                      xl: 80,
+                      xxl: 100,
+                    }}
+                    alt={item.Name}
+                  />
+                }
+                title={item.Name}
+                description={item.JobTitle}
+              />
+            </List.Item>
+          )}
+        ></List>
+      </div>
     );
   }
 }
-
-
