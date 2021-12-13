@@ -13,7 +13,6 @@ class StudioHandouts extends React.Component {
       console.log("Change:", e.target.value);
     };
 
-
     /*
 AttachmentKey: 125961
 Description: "Technical Solutions Team Technical Solutions Team"
@@ -55,19 +54,41 @@ VAR: "g_oHandouts"
           dataSource={data}
           renderItem={(item) => (
             <List.Item>
-              <List.Item.Meta
-                avatar={
-                  <FilePdfOutlined
-                    style={{
-                      fontSize: "40px",
-                    }}
-                  />
-                }
+
+
+{/*               <List.Item.Meta
                 title={<a href={item.AttachmentKey}>{item.Title}</a>}
                 description={
-                  <ListTextBlock description={item.Description} filesize={item.FileSize}></ListTextBlock>
+                  <ListTextBlock
+                    description={item.Description}
+                    filesize={item.FileSize}
+                  ></ListTextBlock>
                 }
-              />
+              /> */}
+
+            <List.Item.Meta
+              avatar={
+                <Avatar
+                  icon={<FilePdfOutlined/>}
+                  size={{
+                    xs: 40,
+                    sm: 40,
+                    md: 40,
+                    lg: 64,
+                    xl: 80,
+                    xxl: 100,
+                  }}
+                  alt={item.Name}
+                  type="primary"
+                />
+              }
+                description={
+                  <ListTextBlock
+                    description={item.Description}
+                    filesize={item.FileSize}
+                  ></ListTextBlock>
+                }
+            />              
             </List.Item>
           )}
         />
