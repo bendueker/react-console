@@ -2,17 +2,55 @@
 const { Layout, Row, Col } = antd;
 const { Header, Footer, Content } = Layout;
 
+
+
+function getWindowDimensions() {
+  const { innerWidth: width, innerHeight: height } = window;
+  return {
+    width,
+    height,
+  };
+}
+
+function useWindowDimensions() {
+  const [windowDimensions, setWindowDimensions] = useState(
+    getWindowDimensions()
+  );
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimensions(getWindowDimensions());
+    }
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return windowDimensions;
+}
+
 class StudioLayout extends React.Component {
   constructor(props) {
     super(props);
+    this.windowDimensions = getWindowDimensions();
   }
+
+  const [darkMode, setDarkMode] = useState(false);
 
   render() {
     return (
-      <Layout>
+    <div className={`App ${darkMode && "dark-mode"}`}>
+      <Layout
+        className="layout-body-background"
+        style={{
+          height: "97vh",
+          overflowY: "hidden",
+          background: "var(--ant-primary-1)",
+        }}
+      >
         <Header
           style={{
-            background: "#000",
+            background: "var(--ant-primary-color)",
             padding: "2px",
           }}
         >
@@ -21,11 +59,19 @@ class StudioLayout extends React.Component {
         <Content
           style={{
             margin: "12px",
-            background: "#fff",
+            /*             background: "#fff", */
           }}
         >
           <Row>
-            <Col xs={24} xl={16}>
+            <Col
+              xs={24}
+              xl={16}
+              style={
+                {
+                  //overflowY: "auto",
+                }
+              }
+            >
               <StudioVideo
                 style={{
                   width: "100%",
@@ -43,9 +89,8 @@ class StudioLayout extends React.Component {
             </Col>
           </Row>
         </Content>
-        <Footer>Footer</Footer>
       </Layout>
+      </div>
     );
   }
 }
-
