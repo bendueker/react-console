@@ -57,7 +57,6 @@ class StudioLayoutSlides extends React.Component {
             </Col>
           </Row>
         </Content>
-        <Footer>Footer</Footer>
       </Layout>
     );
   }

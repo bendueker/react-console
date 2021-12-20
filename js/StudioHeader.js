@@ -108,7 +108,7 @@ class StudioHeader extends React.Component {
                   fontSize: "155%",
                   verticalAlign: "middle",
                   margin: "0 10px",
-                  color:"#fff"
+                  color:"var(--ant-primary-1)"
                 }}
               />
             </a>
@@ -124,7 +124,7 @@ class StudioHeader extends React.Component {
                   fontSize: "155%",
                   verticalAlign: "middle",
                   margin: "0 10px",
-                  color:"#fff"
+                  color:"var(--ant-primary-1)"
                 }}
               />
             </a>
@@ -140,7 +140,7 @@ class StudioHeader extends React.Component {
                   fontSize: "155%",
                   verticalAlign: "middle",
                   margin: "0 10px",
-                  color:"#fff"
+                  color:"var(--ant-primary-1)"
                 }}
                 onClick={this.showDrawer}
               />
@@ -154,7 +154,7 @@ class StudioHeader extends React.Component {
           onClose={this.onClose}
           visible={this.state.visible}
         >
-        <StudioProfileForm></StudioProfileForm>
+        <StudioTheme></StudioTheme>
         </Drawer>
       </Row>
     );
