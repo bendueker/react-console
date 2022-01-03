@@ -19,9 +19,9 @@ class StudioTabs extends React.Component {
     return (
       <Tabs
         style={{
-          margin: "0 24px",
-          background: "#fff",
-          height: "500px",
+          margin: "0 12px",
+          padding: "0 12px",
+          height: "calc(100vh - 64px)",
         }}
       >
         <TabPane tab="Chat" key="1">

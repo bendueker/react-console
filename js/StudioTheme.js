@@ -39,36 +39,26 @@ const { DownOutlined, MailOutlined, SettingOutlined, ClockCircleOutlined } =
 const { useState, useEffect } = React;
 const { TabPane } = Tabs;
 
-const dark = {
-  color: {
-    primaryColor: "#fff",
-    headingColor: "#fff",
-    errorColor: "#fff",
-    warningColor: "#faad14",
-    successColor: "#52c41a",
-    infoColor: "#1890ff",
-    textColor: "#000000",
-    iconColor: "#ffffff",
-  },
-};
-
 class StudioTheme extends React.Component {
   constructor(props) {
     super(props);
     this.setColor = this.setColor.bind(this);
     this.onColorChange = this.onColorChange.bind(this);
+    this.handleButtonClick = this.handleButtonClick.bind(this);
+    this.myEffect = this.myEffect;
     this.state = {
       color: {
-        primaryColor: "#ffffcc",
+        primaryColor: "#26afc9",
         headingColor: "#000000",
         errorColor: "#ff4d4f",
         warningColor: "#faad14",
         successColor: "#52c41a",
-        infoColor: "#1890ff",
+        infoColor: "#ffffff",
         textColor: "#000000",
         iconColor: "#ffffff",
         layoutBodyBackground: "#000",
       },
+      stylePath: "dark.css",
     };
   }
 
@@ -84,17 +74,15 @@ class StudioTheme extends React.Component {
 
     this.setColor(mergedNextColor);
     ConfigProvider.config({
-      prefixCls: "ant",
+      prefixCls: "studio",
       theme: mergedNextColor,
     });
   }
 
   attachColor = (elem, id) => {
     var myPicker = new JSColor(id, {
-      onChange: () =>
-        this.onColorChange({ [elem.id]: elem.value.toString() }),
+      onChange: () => this.onColorChange({ [elem.id]: elem.value.toString() }),
     });
-    //var myPicker = new JSColor(id, {onChange: () => {}})
   };
 
   componentDidMount = () => {
@@ -104,37 +92,73 @@ class StudioTheme extends React.Component {
     this.attachColor(elem2, "#infoColor");
   };
 
+  handleButtonClick = () => {
+    this.state.stylePath = "dark.css";
+    var head = document.head;
+    var link = document.createElement("link");
+
+    link.type = "text/css";
+    link.rel = "stylesheet";
+    link.href = "dark.css";
+
+    head.appendChild(link);
+  };
+
+  /*   myEffect = useEffect(() => {
+    var head = document.head;
+    var link = document.createElement("link");
+
+    link.type = "text/css";
+    link.rel = "stylesheet";
+    link.href = stylePath;
+
+    head.appendChild(link);
+
+    return () => { head.removeChild(link); }
+
+  }, []);
+   */
+
   render() {
-    /*     const ColorPicker = ({ color }) => (
-        <Input
-          onChange={({ e }) => {
-            this.onColorChange({
-              primaryColor: event.target.value,
-            });
-          }}
-          value={props.color}
-          id="primaryColor"
-          data-js-color="{}"
-        />
-
-    ); */
-
     return (
       <div className=".theme-box">
-        <Input
-          value={this.state.color.primaryColor}
-          id="primaryColor"
-        />
+        <Input value={this.state.color.primaryColor} id="primaryColor" />
 
+        <Input value={this.state.color.infoColor} id="infoColor" />
 
-
-        <Input
-          value={this.state.color.infoColor}
-          id="infoColor"
-        />
-
-
+        <Button onClick={this.handleButtonClick}>Dark Mode</Button>
       </div>
     );
   }
 }
+
+/* 
+
+  const [ stylePath, setStylePath ] = useState("dark.css");
+    
+  const handleButtonClick = () => {
+    setStylePath({stylePath: 'style2.css'});
+  }
+
+  useEffect(() => {
+    var head = document.head;
+    var link = document.createElement("link");
+
+    link.type = "text/css";
+    link.rel = "stylesheet";
+    link.href = stylePath;
+
+    head.appendChild(link);
+
+    return () => { head.removeChild(link); }
+
+  }, [stylePath]);
+
+  return (
+    <div>
+      <button type="button" onClick={handleButtonClick}>
+        Click to update stylesheet
+      </button>
+    </div>
+  );
+}; */

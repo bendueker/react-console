@@ -5,10 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=">
   <title>react test</title>
-  <link rel="stylesheet" type="text/less" href="https://unpkg.com/antd@4.17.0-alpha.9/dist/antd.less"
-    crossorigin="anonymous" />
+
   <link rel="stylesheet" href="https://unpkg.com/antd@4.17.0-alpha.9/dist/antd.css" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://unpkg.com/antd@4.17.0-alpha.9/dist/antd.variable.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://unpkg.com/antd@4.17.0-alpha.9/dist/antd.variable.min.css"
+    crossorigin="anonymous" />
 
   <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
@@ -22,42 +22,85 @@
   <script type="text/javascript" src="https://presentationsqa.akamaized.net/cfr/scripts/XBrowser.js"></script>
   <script type="text/javascript" src="https://presentationsqa.akamaized.net/cfr/scripts/InxpoAJAX.js"></script>
   <script type="text/javascript" src="https://presentationsqa.akamaized.net/cfr/scripts/VTS/DataCache.js"></script>
-  <script type="text/javascript" src="https://jscolor.com/release/2.4/jscolor-2.4.6/jscolor.js" ></script>
+  <script type="text/javascript" src="https://jscolor.com/release/2.4/jscolor-2.4.6/jscolor.js"></script>
   <script type="text/javascript"
     src="https://presentationsqa.akamaized.net/cfr/scripts/LanguageStrings1033.js"></script>
 
-<style>
-  .globalfont{
-    color:var(--ant-info-color) !important;
-  }
 
+  <style>
+    .ovr_bg {
+      background: var(--studio-primary-color) !important;
+      background-color: var(--studio-primary-color) !important;
+    }
 
-  html,
-  body,
+    .dark-mode {
+      background: black !important;
+      color: white !important;
+    }
 
-  h1 {
-    padding: 0.5rem;
-    border: 3px dotted red;
-  }
+    .dark-mode h1,
+    .dark-mode h2,
+    .dark-mode h3,
+    .dark-mode h4,
+    .dark-mode h5,
+    .dark-mode h6 {
+      color: white !important;
+    }
 
-  .dark-mode {
-    background: black;
-    color: white;
-  }
-  .dark-mode h1 {
-    border-color: aqua;
-  }
+    .dark-mode .ant-list-item-meta-description {
+      color: white !important;
 
-</style>
+    }
 
+    .dark-mode .ant-tabs {
+      color: rgba(255, 255, 255, 0.85);
+    }
 
+    .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn,
+    .ant-tabs-tab:hover {
+      color: var(--studio-primary-color) !important;
+    }
+
+    .ant-tabs-ink-bar {
+      background: var(--studio-primary-color) !important;
+    }
+
+    .ant-avatar-icon {
+      background: var(--studio-primary-color) !important;
+    }
+
+    .ant-layout-header .anticon {
+      color: var(--studio-info-color) !important;
+    }
+
+    main .ant-row {
+      background: #fff;
+    }
+
+    .ant-btn-primary {
+      background: var(--studio-primary-color) !important;
+    }
+
+    .HeaderImage {
+      height: auto;
+      width: 140px !important;
+      height: 54px !important;
+      display: inline-block;
+      background-repeat: no-repeat;
+      margin: 0 0 0 20px;
+      overflow: hidden;
+      background-position: center;
+      background-size: contain;
+      background-size: 140px auto;
+    }
+  </style>
 
 
 </head>
 
 <body>
   <!--   <button onclick="clickHandler()">click me</button> -->
-  <div id="root-react" class="globalfont">React is loading...</div>
+  <div id="root-react" class="global_font">React is loading...</div>
 
   <script type="text/babel" src="./js/StudioLayout.js"></script>
   <script type="text/babel" src="./js/StudioLayoutSlides.js"></script>
@@ -72,26 +115,11 @@
   <script type="text/babel" src="./js/StudioProfileForm.js"></script>
   <script type="text/babel" src="./js/StudioTheme.js"></script>
   <script type="text/babel" src="./js/StudioReactions.js"></script>
+  <script type="text/babel" src="./js/StudioPolling.js"></script>
   <script type="text/babel" src="./js/app.js"></script>
   <script type="text/javascript" src="FakeData.js"></script>
 
 
-
-
-
-
-
-<!--   <script>
-    window.less = {
-      async: false,
-      env: 'production'
-    };
-  </script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.11.3/less.min.js"></script>
-  <noscript>
-    You need to enable JavaScript to run this app.
-  </noscript>
-  <button onclick="clickHandler()">Click here</button> -->
 </body>
 
 </html>

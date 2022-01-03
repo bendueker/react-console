@@ -1,8 +1,7 @@
 "use strict";
 const { Layout, Row, Col } = antd;
 const { Header, Footer, Content } = Layout;
-
-
+//const {Animate} = rc-animate
 
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
@@ -20,6 +19,7 @@ function useWindowDimensions() {
   useEffect(() => {
     function handleResize() {
       setWindowDimensions(getWindowDimensions());
+      console.log(getWindowDimensions());
     }
 
     window.addEventListener("resize", handleResize);
@@ -33,63 +33,103 @@ class StudioLayout extends React.Component {
   constructor(props) {
     super(props);
     this.windowDimensions = getWindowDimensions();
+    this.onColorChange = this.onColorChange.bind(this);
+    this.showPoll = this.showPoll.bind(this);
+    this.hidePoll = this.hidePoll.bind(this);
+    this.state = {
+      showComponent: false,
+    };
   }
 
-  const [darkMode, setDarkMode] = useState(false);
+  onColorChange() {
+    ConfigProvider.config({
+      prefixCls: "studio",
+      theme: {
+        primaryColor: "#26afc9",
+        headingColor: "#000000",
+        errorColor: "#ff4d4f",
+        warningColor: "#faad14",
+        successColor: "#52c41a",
+        infoColor: "#ffffff",
+        textColor: "#000000",
+        iconColor: "#ffffff",
+        layoutBodyBackground: "#000",
+      },
+    });
+  }
+
+  showPoll() {
+    this.setState({
+      showComponent: true,
+    });
+  }
+
+  hidePoll() {
+    console.log("hide")
+    this.setState({
+      showComponent: false,
+    });
+  }
+
+  //const [darkMode, setDarkMode] = useState(false);
 
   render() {
     return (
-    <div className={`App ${darkMode && "dark-mode"}`}>
-      <Layout
-        className="layout-body-background"
-        style={{
-          height: "97vh",
-          overflowY: "hidden",
-          background: "var(--ant-primary-1)",
-        }}
-      >
-        <Header
+      <div>
+        {this.onColorChange()}
+        <Layout
+          //className="dark-mode"
           style={{
-            background: "var(--ant-primary-color)",
-            padding: "2px",
+            height: "97vh",
+            overflowY: "hidden",
           }}
         >
-          <StudioHeader></StudioHeader>
-        </Header>
-        <Content
-          style={{
-            margin: "12px",
-            /*             background: "#fff", */
-          }}
-        >
-          <Row>
-            <Col
-              xs={24}
-              xl={16}
-              style={
-                {
-                  //overflowY: "auto",
+          <Header
+            className="ovr_bg"
+            style={{
+              padding: "2px",
+            }}
+          >
+            <StudioHeader></StudioHeader>
+          </Header>
+          <Content
+            style={{
+              margin: "12px",
+              /*             background: "#fff", */
+            }}
+          >
+            <Row>
+              <Col
+                xs={24}
+                xl={16}
+                style={
+                  {
+                    //overflowY: "auto",
+                  }
                 }
-              }
-            >
-              <StudioVideo
-                style={{
-                  width: "100%",
-                  height: "auto",
-                }}
-                src={
-                  "https://qa.onlinexperiences.com/customvts/Prototypes/Lighthouse/lighthouse-rp-v4/Noteworthey.mp4"
-                }
-              ></StudioVideo>
-              <StudioDetails></StudioDetails>
-            </Col>
+              >
+                <StudioVideo
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                  }}
+                  src={
+                    "https://qa.onlinexperiences.com/customvts/Prototypes/Lighthouse/lighthouse-rp-v4/Noteworthey.mp4"
+                  }
+                ></StudioVideo>
+                <StudioDetails></StudioDetails>
+              </Col>
 
-            <Col xs={24} xl={8}>
-              <StudioTabs></StudioTabs>
-            </Col>
-          </Row>
-        </Content>
-      </Layout>
+              <Col xs={24} xl={8}>
+               {this.state.showComponent && <StudioPolling hidePollHandler={this.hidePoll} />}
+{/*                 <StudioPolling></StudioPolling> */}
+                <StudioTabs></StudioTabs>
+              </Col>
+            </Row>
+          </Content>
+        
+        </Layout>
+        <Button onClick={this.showPoll}>Poll</Button>
       </div>
     );
   }
