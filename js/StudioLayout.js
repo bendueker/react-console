@@ -114,7 +114,7 @@ class StudioLayout extends React.Component {
                     height: "auto",
                   }}
                   src={
-                    "https://qa.onlinexperiences.com/customvts/Prototypes/Lighthouse/lighthouse-rp-v4/Noteworthey.mp4"
+                    "Ryan-WCAG.mp4"
                   }
                 ></StudioVideo>
                 <StudioDetails></StudioDetails>
@@ -122,7 +122,6 @@ class StudioLayout extends React.Component {
 
               <Col xs={24} xl={8}>
                {this.state.showComponent && <StudioPolling hidePollHandler={this.hidePoll} />}
-{/*                 <StudioPolling></StudioPolling> */}
                 <StudioTabs></StudioTabs>
               </Col>
             </Row>

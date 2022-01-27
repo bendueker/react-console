@@ -12,32 +12,32 @@ const handleClick = (e) => {
   setState({ current: e.key });
 };
 
-
-
-const menu = (
+const menu = (showDrawer) => (
   <Menu>
     <Menu.ItemGroup title="Settings">
-      <Menu.Item key={0}>Video</Menu.Item>
       <SubMenu title="Layouts" key={10}>
         <Menu.Item key={1}>
           <a href="#">Video Only</a>
         </Menu.Item>
-        <Menu.Item key={2}>
+        <Menu.Item key={52}>
           <a href="#slides">Video and Slides</a>
         </Menu.Item>
       </SubMenu>
     </Menu.ItemGroup>
-    <SubMenu title="Themes" key={20}>
-      <Menu.Item key={3}>Dark Theme</Menu.Item>
-      <Menu.Item key={4}>Light Theme</Menu.Item>
+    <SubMenu title="Design" key={20}>
+      <Menu.Item key={89} onClick={() => showDrawer("color")}>
+        Change Colors
+      </Menu.Item>
     </SubMenu>
   </Menu>
 );
 
-const menuavatar = (
+const menuavatar  = (showDrawer) => (
   <Menu>
     <Menu.ItemGroup title="Ben Dueker">
-      <Menu.Item key={0} >Profile</Menu.Item>
+      <Menu.Item key={0} onClick={() => showDrawer("profile")}>
+        Profile
+      </Menu.Item>
       <Menu.Item key={1}>Settings</Menu.Item>
     </Menu.ItemGroup>
   </Menu>
@@ -54,32 +54,42 @@ const menureports = (
   </Menu>
 );
 
-
-
-
 class StudioHeader extends React.Component {
   constructor(props) {
     super(props);
     this.showDrawer = this.showDrawer.bind(this);
     this.onClose = this.onClose.bind(this);
+    this.renderDrawer = this.renderDrawer.bind(this);
     this.state = {
       setVisible: null,
-      visible: false
+      visible: false,
+      mode: "color",
     };
-
   }
 
-    showDrawer() {
-      this.setState({setVisible: true, visible: true});
+  showDrawer(mode) {
+    this.setState({ setVisible: true, visible: true, mode: mode });
+  }
+  onClose() {
+    this.setState({ setVisible: false, visible: false });
+  }
+
+  renderDrawer() {
+    switch (this.state.mode) {
+      case "color":
+        return <StudioTheme></StudioTheme>;
+      // ...
+      case "profile":
+        return <StudioProfileForm></StudioProfileForm>;
+      // ...
+      case "c":
+      // ...
+      default:
+      // equivalent to the last else clause ...
     }
-    onClose() {
-      this.setState({setVisible: false, visible: false});
-    }
+  }
 
   render() {
-
-
-
     return (
       <Row>
         <Col
@@ -108,13 +118,12 @@ class StudioHeader extends React.Component {
                 style={{
                   fontSize: "155%",
                   verticalAlign: "middle",
-                  margin: "0 10px"
-
+                  margin: "0 10px",
                 }}
               />
             </a>
           </Dropdown>
-          <Dropdown overlay={menu} arrow={true}>
+          <Dropdown overlay={menu(this.showDrawer)} arrow={true}>
             <a
               href="/settings"
               className="ant-dropdown-link"
@@ -124,13 +133,13 @@ class StudioHeader extends React.Component {
                 style={{
                   fontSize: "155%",
                   verticalAlign: "middle",
-                  margin: "0 10px"
+                  margin: "0 10px",
                 }}
               />
             </a>
           </Dropdown>
 
-          <Dropdown overlay={menuavatar} arrow={true}>
+          <Dropdown overlay={menuavatar(this.showDrawer)} arrow={true}>
             <a
               className="ant-dropdown-link"
               onClick={(e) => e.preventDefault()}
@@ -139,9 +148,8 @@ class StudioHeader extends React.Component {
                 style={{
                   fontSize: "155%",
                   verticalAlign: "middle",
-                  margin: "0 10px"
+                  margin: "0 10px",
                 }}
-                onClick={this.showDrawer}
               />
             </a>
           </Dropdown>
@@ -153,7 +161,7 @@ class StudioHeader extends React.Component {
           onClose={this.onClose}
           visible={this.state.visible}
         >
-        <StudioTheme></StudioTheme>
+          {this.renderDrawer()}
         </Drawer>
       </Row>
     );

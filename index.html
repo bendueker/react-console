@@ -10,12 +10,12 @@
   <link rel="stylesheet" href="https://unpkg.com/antd@4.17.0-alpha.9/dist/antd.variable.min.css"
     crossorigin="anonymous" />
 
-  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react-router-dom/6.0.2/react-router-dom.production.min.js"
     crossorigin></script>
-  <script src='https://unpkg.com/react-router-dom@5.0.0/umd/react-router-dom.min.js' crossorigin></script>
-  <script src="https://unpkg.com/babel-standalone@6/babel.min.js" crossorigin></script>
+  <script src='https://unpkg.com/react-router-dom@5.0.0/umd/react-router-dom.min.js' crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/antd@4.17.0-alpha.9/dist/antd-with-locales.js" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/@ant-design/icons/dist/index.umd.js" crossorigin="anonymous"></script>
   <script type="text/javascript" src="GroupChat.js"></script>
@@ -28,69 +28,10 @@
 
 
   <style>
-    .ovr_bg {
-      background: var(--studio-primary-color) !important;
-      background-color: var(--studio-primary-color) !important;
-    }
-
-    .dark-mode {
-      background: black !important;
-      color: white !important;
-    }
-
-    .dark-mode h1,
-    .dark-mode h2,
-    .dark-mode h3,
-    .dark-mode h4,
-    .dark-mode h5,
-    .dark-mode h6 {
-      color: white !important;
-    }
-
-    .dark-mode .ant-list-item-meta-description {
-      color: white !important;
-
-    }
-
-    .dark-mode .ant-tabs {
-      color: rgba(255, 255, 255, 0.85);
-    }
-
-    .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn,
-    .ant-tabs-tab:hover {
-      color: var(--studio-primary-color) !important;
-    }
-
-    .ant-tabs-ink-bar {
-      background: var(--studio-primary-color) !important;
-    }
-
-    .ant-avatar-icon {
-      background: var(--studio-primary-color) !important;
-    }
-
-    .ant-layout-header .anticon {
-      color: var(--studio-info-color) !important;
-    }
-
-    .ant-btn-primary {
-      background: var(--studio-primary-color) !important;
-    }
-
-    .HeaderImage {
-      height: auto;
-      width: 140px !important;
-      height: 54px !important;
-      display: inline-block;
-      background-repeat: no-repeat;
-      margin: 0 0 0 20px;
-      overflow: hidden;
-      background-position: center;
-      background-size: contain;
-      background-size: 140px auto;
-    }
+    
   </style>
-
+  <link rel="stylesheet" href="main.css"
+    crossorigin="anonymous" />
 
 </head>
 
@@ -112,6 +53,7 @@
   <script type="text/babel" src="./js/StudioTheme.js"></script>
   <script type="text/babel" src="./js/StudioReactions.js"></script>
   <script type="text/babel" src="./js/StudioPolling.js"></script>
+  <script type="text/babel" src="./js/StudioCPEProgress.js"></script>
   <script type="text/babel" src="./js/app.js"></script>
   <script type="text/javascript" src="FakeData.js"></script>
 

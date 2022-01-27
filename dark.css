@@ -7742,6 +7742,7 @@ _:-ms-fullscreen
 .ant-row {
   display: flex;
   flex-flow: row wrap;
+  background: #000000;
 }
 .ant-row::before,
 .ant-row::after {
