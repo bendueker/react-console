@@ -19,6 +19,7 @@ class ReportsLayout extends React.Component {
           <StudioHeader></StudioHeader>
         </Header>
         <Content
+          id='report-container'
           style={{
             margin: "12px",
             background: "#fff",
@@ -26,17 +27,11 @@ class ReportsLayout extends React.Component {
         >
           <Row>
             <Col xs={24} xl={16}>
-              <StudioVideo
-                style={{
-                  width: "100%",
-                  height: "auto",
-                }}
-              ></StudioVideo>
-              <StudioDetails></StudioDetails>
+              <ReportGraph></ReportGraph>
             </Col>
 
             <Col xs={24} xl={8}>
-              <StudioTabs></StudioTabs>
+
             </Col>
           </Row>
         </Content>
