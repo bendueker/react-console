@@ -19,16 +19,15 @@ class StudioTabs extends React.Component {
     return (
       <Tabs
         style={{
-          margin: "0 24px",
-          background: "#fff",
-          height: "500px",
+          margin: "0 12px",
+          padding: "0 12px",
         }}
       >
         <TabPane tab="Chat" key="1">
           <div id={"ChatIframeContainer"}></div>
         </TabPane>
-        <TabPane tab="Transcription" key="2">
-          Content of Tab Pane 2
+        <TabPane tab="CPE Credit" key="2">
+          <StudioCPEProgress></StudioCPEProgress>
         </TabPane>
         <TabPane tab="Questions" key="3">
           Content of Tab Pane 3

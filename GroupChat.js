@@ -172,7 +172,8 @@ function InitGroupChat() {
     //TranslatorCallback: TranslatorCallback,
     HideFontSetings: false,
     HideReadingMode: false,
-    //ExternalChatRoomLoaded: onAxiomGroupChatRoomLoaded,
+    KioskMode:false,
+    ExternalChatRoomLoaded: onAxiomGroupChatRoomLoaded,
   };
   var g_oMessages = g_oLang;
   var g_oDataCache = new DataCache();
@@ -189,6 +190,57 @@ function InitGroupChat() {
   g_oAxiomGroupChats[524923] = oAxiomGroupChat;
   
 }
+
+ function onAxiomGroupChatRoomLoaded(oAxiomGroupChat)
+  {
+    if (!oAxiomGroupChat.hasHistoryCached)
+      {
+        if (!oAxiomGroupChat.historyCount)
+          {
+            var cGUID = null;
+            if (g_oStaticContent)
+              {
+                if (window.g_aoSTCFeatures)
+                  {
+                    var oFeature;
+                    for (var iLup = 0; iLup < g_aoSTCFeatures.length; iLup++)
+                      {
+                        oFeature = g_aoSTCFeatures[iLup];
+                        if (g_aoSTCFeatures[iLup].LobbyFeatureTypeID == Features.Types.CHAT_HISTORY)
+                          {
+                            cGUID = oFeature.GUID;
+                            break;
+                          }
+                      }
+                  }
+
+                if (cGUID)
+                  {
+                    var iChatRoomKey = oAxiomGroupChat.GetChatRoomKey();
+
+                    var aoParams = [
+                        { name: "CompanyKey", value: g_oSettings.CompanyKey },
+                        { name: "ShowUUID", value: g_oSettings.ShowUUID },
+                        { name: "LocaleID", value: g_oSettings.LocaleID },
+                        { name: "ChatRoomKey", value: iChatRoomKey }
+                      ];
+
+                    g_oStaticContent.getJSON(cGUID, aoParams, function (cResult)
+                    {
+                      oAxiomGroupChat.CacheHistory(cResult);
+
+                      oAxiomGroupChat.RetrieveHistory(true);
+                    });
+                  }
+              }
+
+            if (!cGUID)
+              {
+                oAxiomGroupChat.RetrieveHistory(true);
+              }
+          }
+      }
+  }
 
 function LoadScripts(array, onComplete) {
   function getFileName(path) {

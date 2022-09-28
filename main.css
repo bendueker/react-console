@@ -1,16 +1,72 @@
+.ovr_bg {
+      background: var(--studio-primary-color) !important;
+      background-color: var(--studio-primary-color) !important;
+    }
 
-@import 'https://unpkg.com/antd@4.17.0-alpha.9/dist/antd.css';
+    .dark-mode {
+      background: black !important;
+      color: white !important;
+    }
 
-@primary-color: #CA6027; // primary color for all components
-@link-color: #5C987A; // link color
-@success-color: #52c41a; // success state color
-@warning-color: #faad14; // warning state color
-@error-color: #f5222d; // error state color
-@font-size-base: 14px; // major text font size
-@heading-color: rgba(0, 0, 0, 0.85); // heading text color
-@text-color: rgba(0, 0, 0, 0.65); // major text color
-@text-color-secondary: rgba(0, 0, 0, 0.45); // secondary text color
-@disabled-color: rgba(0, 0, 0, 0.25); // disable state color
-@border-radius-base: 15px; // major border radius
-@border-color-base: #d9d9d9; // major border color
-@box-shadow-base: 0 2px 8px rgba(0, 0, 0, 0.15); // major shadow for layers
+    .dark-mode h1,
+    .dark-mode h2,
+    .dark-mode h3,
+    .dark-mode h4,
+    .dark-mode h5,
+    .dark-mode h6 {
+      color: white !important;
+    }
+
+    .dark-mode .ant-list-item-meta-description {
+      color: white !important;
+
+    }
+
+    .dark-mode .ant-tabs {
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn,
+    .ant-tabs-tab:hover {
+      color: var(--studio-primary-color) !important;
+    }
+
+    .ant-tabs-ink-bar {
+      background: var(--studio-primary-color) !important;
+    }
+
+    .ant-avatar-icon {
+      background: var(--studio-primary-color) !important;
+    }
+
+    .ant-layout-header .anticon {
+      color: var(--studio-info-color) !important;
+    }
+
+    .ant-btn-primary {
+      background: var(--studio-primary-color) !important;
+    }
+    
+
+    .HeaderImage {
+      height: auto;
+      width: 140px !important;
+      height: 54px !important;
+      display: inline-block;
+      background-repeat: no-repeat;
+      margin: 0 0 0 20px;
+      overflow: hidden;
+      background-position: center;
+      background-size: contain;
+      background-size: 140px auto;
+    }
+
+    .ant-row{
+      background: #fff;
+
+    }
+
+    .ant-layout-header .ant-row{
+      background: var(--studio-primary-color) !important;
+
+    }

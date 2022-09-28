@@ -5,47 +5,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=">
   <title>react test</title>
-  <link rel="stylesheet" type="text/less" href="https://unpkg.com/antd@4.17.0-alpha.9/dist/antd.less"
-    crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://unpkg.com/antd@4.17.0-alpha.9/dist/antd.css" crossorigin="anonymous" />
 
-  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+  <link rel="stylesheet" href="https://unpkg.com/antd@4.17.0-alpha.9/dist/antd.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://unpkg.com/antd@4.17.0-alpha.9/dist/antd.variable.min.css"
+    crossorigin="anonymous" />
+
+  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react-router-dom/6.0.2/react-router-dom.production.min.js"
     crossorigin></script>
-  <script src='https://unpkg.com/react-router-dom@5.0.0/umd/react-router-dom.min.js' crossorigin></script>
-  <script src="https://unpkg.com/babel-standalone@6/babel.min.js" crossorigin></script>
+  <script src='https://unpkg.com/react-router-dom@5.0.0/umd/react-router-dom.min.js' crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/antd@4.17.0-alpha.9/dist/antd-with-locales.js" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/@ant-design/icons/dist/index.umd.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://unpkg.com/@antv/g2plot@latest/dist/g2plot.min.js"></script>
   <script type="text/javascript" src="GroupChat.js"></script>
   <script type="text/javascript" src="https://presentationsqa.akamaized.net/cfr/scripts/XBrowser.js"></script>
   <script type="text/javascript" src="https://presentationsqa.akamaized.net/cfr/scripts/InxpoAJAX.js"></script>
   <script type="text/javascript" src="https://presentationsqa.akamaized.net/cfr/scripts/VTS/DataCache.js"></script>
+  <script type="text/javascript" src="https://jscolor.com/release/2.4/jscolor-2.4.6/jscolor.js"></script>
+  
   <script type="text/javascript"
     src="https://presentationsqa.akamaized.net/cfr/scripts/LanguageStrings1033.js"></script>
 
-  <script>
 
-    function clickHandler()
-    {
-      //window.less.modifyVars();
-      less.modifyVars({
-        "theme": {
-          "primaryColor": "#1DA57A",
-        }
-      }
-      )
-    }
-  </script>
-
-
-
+  <style>
+    
+  </style>
+  <link rel="stylesheet" href="main.css"
+    crossorigin="anonymous" />
 
 </head>
 
 <body>
   <!--   <button onclick="clickHandler()">click me</button> -->
-  <div id="root-react">React is loading...</div>
+  <div id="root-react" class="global_font">React is loading...</div>
 
   <script type="text/babel" src="./js/StudioLayout.js"></script>
   <script type="text/babel" src="./js/StudioLayoutSlides.js"></script>
@@ -60,26 +54,13 @@
   <script type="text/babel" src="./js/StudioProfileForm.js"></script>
   <script type="text/babel" src="./js/StudioTheme.js"></script>
   <script type="text/babel" src="./js/StudioReactions.js"></script>
+  <script type="text/babel" src="./js/StudioPolling.js"></script>
+  <script type="text/babel" src="./js/StudioCPEProgress.js"></script>
+  <script type="text/babel" src="./js/ReportGraph.js"></script>
   <script type="text/babel" src="./js/app.js"></script>
   <script type="text/javascript" src="FakeData.js"></script>
 
 
-
-
-
-
-
-  <script>
-    window.less = {
-      async: true,
-      env: 'production'
-    };
-  </script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js"></script>
-  <noscript>
-    You need to enable JavaScript to run this app.
-  </noscript>
-  <button onclick="clickHandler()">Click here</button>
 </body>
 
 </html>

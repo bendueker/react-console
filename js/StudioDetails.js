@@ -108,7 +108,12 @@ class StudioDetails extends React.Component {
     const data = oData.ResultSet[23][0];
 
     return (
-      <React.Fragment>
+      <div
+        style={{
+          overflow: "auto",
+          height: "47vh",
+        }}
+      >
         <Row>
           <Col xs={16} xl={16}>
             <h2
@@ -143,11 +148,11 @@ class StudioDetails extends React.Component {
           </Col>
           <Col xs={8} xl={8}>
             <div
-              style=
-              {{
+              style={{
                 margin: "24px 12px 0 12px",
                 textAlign: "right",
-              }}>
+              }}
+            >
               <StudioReactions></StudioReactions>
             </div>
           </Col>
@@ -162,7 +167,7 @@ class StudioDetails extends React.Component {
 
         <StudioSpeakers></StudioSpeakers>
         <StudioHandouts></StudioHandouts>
-      </React.Fragment>
+      </div>
     );
   }
 }
